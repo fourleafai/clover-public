@@ -1,0 +1,128 @@
+{
+  "$schema": "./roles.schema.json",
+  "version": "0.1.0",
+  "updated": "2026-05-22",
+  "roles": [
+    {
+      "id": "data_scientist",
+      "displayName": "Data Scientist",
+      "description": "Data Scientists extract insights from data using statistical methods, machine learning, and business acumen to drive decision-making.",
+      "typicalDuration": "2-6 weeks, 3-5 rounds",
+      "interviewPipeline": [
+        { "name": "Recruiter Screen", "duration": "15-30 min", "format": "Phone/Video", "primaryFocus": "Background fit, salary expectations, role alignment" },
+        { "name": "Technical Phone Screen", "duration": "45-60 min", "format": "Video + Shared Screen", "primaryFocus": "SQL queries, probability/statistics, Python, basic ML concepts" },
+        { "name": "Onsite: Technical Deep Dive", "duration": "45-60 min", "format": "Video/In-Person", "primaryFocus": "ML algorithms, statistics, experimental design, coding" },
+        { "name": "Onsite: Case Study", "duration": "45-60 min", "format": "Video/In-Person", "primaryFocus": "Real-world data problem, business impact framing" },
+        { "name": "Behavioral / Culture", "duration": "30-45 min", "format": "Video/In-Person", "primaryFocus": "Leadership, collaboration, conflict resolution" }
+      ],
+      "experienceLevels": {
+        "0-1": { "label": "Entry Level", "yearsRange": "0-2 years", "technicalExpectation": "Basic JOINs, GROUP BY, explain algorithms conceptually, implement basic models with sklearn", "behavioralFocus": "Teamwork, learning agility, curiosity, coachability", "interviewWeight": { "technical": 60, "behavioral": 30, "caseOrDesign": 10 } },
+        "2-4": { "label": "Mid Level", "yearsRange": "2-5 years", "technicalExpectation": "Window functions, CTEs, end-to-end pipeline ownership, experimental design", "behavioralFocus": "Independent execution, cross-functional collaboration, project ownership", "interviewWeight": { "technical": 40, "behavioral": 30, "caseOrDesign": 30 } },
+        "5-9": { "label": "Senior", "yearsRange": "5-8 years", "technicalExpectation": "Complex queries, system design for ML, novel problem framing, causal inference", "behavioralFocus": "Leadership without authority, mentoring, strategic communication", "interviewWeight": { "technical": 30, "behavioral": 35, "caseOrDesign": 35 } },
+        "10+": { "label": "Staff+", "yearsRange": "8+ years", "technicalExpectation": "Architecture-level data modeling, define ML strategy, methodology innovation", "behavioralFocus": "Organizational influence, culture-building, executive communication", "interviewWeight": { "technical": 20, "behavioral": 40, "caseOrDesign": 40 } }
+      },
+      "questionCategories": ["sql", "statistics", "ml_theory", "behavioral", "case_profitability"],
+      "feedbackDimensions": [
+        { "name": "Content Quality", "description": "Accuracy, depth, relevance, use of specific examples" },
+        { "name": "Structure & Organization", "description": "Logical flow, use of frameworks, time management" },
+        { "name": "Communication Clarity", "description": "Conciseness, appropriate jargon level, simplification ability" },
+        { "name": "Business Acumen", "description": "Connecting analysis to business impact, stakeholder awareness" },
+        { "name": "Technical Depth", "description": "Understanding of underlying concepts, not just surface-level knowledge" }
+      ],
+      "resume": {
+        "criticalKeywords": ["Python", "R", "SQL", "Machine Learning", "Statistical Analysis", "A/B Testing", "TensorFlow", "PyTorch", "Data Visualization", "Pandas", "scikit-learn", "Deep Learning", "NLP", "Causal Inference", "Experimentation"],
+        "achievementFraming": "Quantify model performance (accuracy, AUC, lift). Frame business impact ('Increased retention by 12% through churn model'). Show end-to-end project ownership.",
+        "formatConventions": "1-2 pages. Projects section is critical. Publications/GitHub if applicable. Education matters for entry level."
+      },
+      "coverLetter": {
+        "tone": "Intellectually curious, impact-oriented, collaborative",
+        "mustInclude": ["Specific project outcomes with metrics", "Methodology awareness", "Business impact framing", "Connection to company's data challenges"],
+        "avoid": ["Pure technical jargon without business context", "Listing tools without context", "Generic statements about loving data"]
+      }
+    },
+    {
+      "id": "software_engineer",
+      "displayName": "Software Engineer",
+      "description": "Software Engineers design, build, and maintain software systems that power applications and services.",
+      "typicalDuration": "2-4 weeks, 4-6 rounds",
+      "interviewPipeline": [
+        { "name": "Recruiter Screen", "duration": "15-30 min", "format": "Phone/Video", "primaryFocus": "Background, role fit, salary expectations" },
+        { "name": "Online Assessment", "duration": "60-90 min", "format": "Async (HackerRank)", "primaryFocus": "2-3 algorithmic problems, auto-graded" },
+        { "name": "Technical Phone Screen", "duration": "45-60 min", "format": "Video + Coderpad", "primaryFocus": "1-2 coding problems, medium difficulty" },
+        { "name": "Onsite: Coding (2-3 rounds)", "duration": "45-60 min each", "format": "Video + IDE/Whiteboard", "primaryFocus": "DSA, optimization, medium to hard difficulty" },
+        { "name": "Onsite: System Design", "duration": "45-60 min", "format": "Video + Whiteboard", "primaryFocus": "Scalable system architecture" },
+        { "name": "Behavioral", "duration": "30-45 min", "format": "Video/In-Person", "primaryFocus": "Collaboration, conflict resolution, growth" }
+      ],
+      "experienceLevels": {
+        "0-1": { "label": "New Grad / Junior", "yearsRange": "0-2 years", "technicalExpectation": "Solve medium problems cleanly with hints. 150-200 practice problems recommended.", "behavioralFocus": "Learning, teamwork", "interviewWeight": { "technical": 80, "behavioral": 20, "caseOrDesign": 0 } },
+        "2-4": { "label": "Mid", "yearsRange": "2-4 years", "technicalExpectation": "Solve medium-hard independently. Optimize solutions. Discuss trade-offs.", "behavioralFocus": "Project ownership, cross-team collaboration", "interviewWeight": { "technical": 50, "behavioral": 25, "caseOrDesign": 25 } },
+        "5-9": { "label": "Senior", "yearsRange": "5-8 years", "technicalExpectation": "Solve hard problems. Focus on code design, extensibility, testing.", "behavioralFocus": "Leadership, mentoring, conflict resolution", "interviewWeight": { "technical": 25, "behavioral": 35, "caseOrDesign": 40 } },
+        "10+": { "label": "Staff+", "yearsRange": "8+ years", "technicalExpectation": "Architecture-level coding. Define patterns and standards.", "behavioralFocus": "Org influence, tech vision, culture building", "interviewWeight": { "technical": 15, "behavioral": 40, "caseOrDesign": 45 } }
+      },
+      "questionCategories": ["coding_dsa", "system_design", "behavioral"],
+      "feedbackDimensions": [
+        { "name": "Code Correctness", "description": "Solution works for all cases including edge cases" },
+        { "name": "Algorithmic Efficiency", "description": "Optimal time and space complexity" },
+        { "name": "Code Quality", "description": "Readability, naming, structure, documentation" },
+        { "name": "System Design Breadth", "description": "Covers requirements, high-level design, deep dives" },
+        { "name": "Communication", "description": "Explains thinking clearly, asks good questions" }
+      ],
+      "resume": {
+        "criticalKeywords": ["System Design", "CI/CD", "Testing", "Scalability", "Microservices", "Distributed Systems", "API Design", "Database", "Cloud (AWS/GCP/Azure)"],
+        "achievementFraming": "Quantify: users served, latency reduced, uptime maintained, code coverage, team velocity improvement. Use X-Y-Z format: 'Accomplished X by doing Y, resulting in Z.'",
+        "formatConventions": "1 page (junior), 1-2 pages (senior). Clean formatting. No graphics/colors for ATS. Projects/open source for juniors."
+      },
+      "coverLetter": {
+        "tone": "Problem-solver, builder, pragmatic",
+        "mustInclude": ["Specific systems built with scale", "Languages and stack relevant to role", "Cross-functional work", "Open source or side projects if applicable"],
+        "avoid": ["Listing every technology you've touched", "Vague claims about coding ability", "No concrete projects"]
+      }
+    },
+    {
+      "id": "product_manager",
+      "displayName": "Product Manager",
+      "description": "Product Managers define product vision, prioritize features, and work cross-functionally to deliver products that solve user problems.",
+      "typicalDuration": "2-4 weeks, 4-6 rounds",
+      "interviewPipeline": [
+        { "name": "Recruiter Screen", "duration": "15-30 min", "format": "Phone/Video", "primaryFocus": "Background, PM experience, product passion" },
+        { "name": "Hiring Manager Screen", "duration": "30-45 min", "format": "Video", "primaryFocus": "Product thinking, career narrative, mutual assessment" },
+        { "name": "Product Sense / Design", "duration": "45-60 min", "format": "Video + Whiteboard", "primaryFocus": "Design a product, improve existing product, user empathy" },
+        { "name": "Analytical / Metrics", "duration": "45-60 min", "format": "Video", "primaryFocus": "Define metrics, investigate metric changes, estimation" },
+        { "name": "Strategy / Execution", "duration": "45-60 min", "format": "Video", "primaryFocus": "Market entry, prioritization, roadmapping" },
+        { "name": "Behavioral / Leadership", "duration": "30-45 min", "format": "Video/In-Person", "primaryFocus": "Cross-functional influence, stakeholder management" }
+      ],
+      "experienceLevels": {
+        "0-1": { "label": "APM / Entry", "yearsRange": "0-2 years", "technicalExpectation": "Structured thinking, user empathy, creative ideas. Frameworks acceptable.", "behavioralFocus": "Curiosity, analytical thinking, collaboration", "interviewWeight": { "technical": 0, "behavioral": 20, "caseOrDesign": 80 } },
+        "2-4": { "label": "PM", "yearsRange": "2-5 years", "technicalExpectation": "Independent product judgment, data-informed intuition, competitive awareness.", "behavioralFocus": "Cross-functional leadership, project ownership", "interviewWeight": { "technical": 0, "behavioral": 20, "caseOrDesign": 80 } },
+        "5-9": { "label": "Senior PM", "yearsRange": "5-8 years", "technicalExpectation": "Product vision, multi-product thinking, platform strategy.", "behavioralFocus": "Strategic communication, stakeholder management", "interviewWeight": { "technical": 0, "behavioral": 30, "caseOrDesign": 70 } },
+        "10+": { "label": "Director+", "yearsRange": "8+ years", "technicalExpectation": "Portfolio strategy, company-level product direction.", "behavioralFocus": "Executive influence, org leadership", "interviewWeight": { "technical": 0, "behavioral": 35, "caseOrDesign": 65 } }
+      },
+      "questionCategories": ["product_sense", "analytical", "behavioral"],
+      "feedbackDimensions": [
+        { "name": "Structured Thinking", "description": "Logical framework, MECE breakdown, clear prioritization" },
+        { "name": "User Empathy", "description": "Deep understanding of user needs, pain points, behaviors" },
+        { "name": "Analytical Rigor", "description": "Data-driven decisions, metric definition, hypothesis testing" },
+        { "name": "Strategic Thinking", "description": "Market awareness, competitive analysis, long-term vision" },
+        { "name": "Communication", "description": "Clear articulation, stakeholder empathy, persuasion" }
+      ],
+      "resume": {
+        "criticalKeywords": ["Product Strategy", "User Research", "A/B Testing", "Metrics", "Roadmap", "Cross-functional Leadership", "Go-to-Market", "SQL", "Agile/Scrum", "User Stories", "PRDs", "Data-Driven"],
+        "achievementFraming": "Impact metrics (revenue, engagement, conversion, NPS). Frame as owner: 'Led launch of X, resulting in Y% increase in Z.' Show breadth across PM skills.",
+        "formatConventions": "1-2 pages. Impact-focused bullets, not task descriptions. Company recognition/awards. Clear progression."
+      },
+      "coverLetter": {
+        "tone": "Strategic, user-focused, data-informed, enthusiastic",
+        "mustInclude": ["Product launches with metrics", "User research insights", "Cross-functional leadership examples", "Company mission alignment"],
+        "avoid": ["Technical implementation details (that's the engineer's job)", "Vague product instinct claims", "No concrete examples"]
+      }
+    }
+  ],
+  "pendingExtraction": [
+    "ml_engineer",
+    "data_analyst",
+    "finance_analyst",
+    "consulting",
+    "investment_banking",
+    "other"
+  ]
+}
