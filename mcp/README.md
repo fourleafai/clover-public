@@ -1,14 +1,18 @@
-# four-leaf-mcp
+# four-leaf-mcp (reference implementation)
 
-Open [MCP](https://modelcontextprotocol.io) server for interview prep. Cross-LLM. Hands off to [Four-Leaf](https://four-leaf.ai) for live voice.
+Open [MCP](https://modelcontextprotocol.io) server for interview prep.
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](../LICENSE)
 
-## What this is
+> **Most users want the hosted version**, not this code. The canonical Four-Leaf MCP lives at `https://four-leaf.ai/api/mcp` with browser-based login + per-user tools (voice handoff, company intelligence). Install instructions: [four-leaf.ai/oss](https://four-leaf.ai/oss).
+>
+> This directory is a **reference implementation** — useful if you want to (a) read how a typical MCP server is structured, (b) self-host without auth for local-only experimentation, or (c) fork and build something derivative. Stdio transport, runs locally, no per-user data.
 
-A Model Context Protocol server that exposes Four-Leaf's interview intelligence to any MCP-aware AI assistant. All tools are free today. Future tools that tie back to a [Four-Leaf](https://four-leaf.ai) account (voice mock interview kickoff, company-specific intelligence, resume tailoring against a specific JD) are on the roadmap.
+## What this code does
 
-The MCP protocol is governed by the [Linux Foundation](https://www.linuxfoundation.org/) and natively supported by Anthropic, OpenAI, Google, AWS, and Microsoft. Pick your assistant — this server works with it.
+A Model Context Protocol server that exposes the public-safe slice of Four-Leaf's role intelligence catalog. Same tool surface as the hosted version's free tier, no authentication, no user data.
+
+The MCP protocol is governed by the [Linux Foundation](https://www.linuxfoundation.org/) and natively supported by Anthropic, OpenAI, Google, AWS, and Microsoft.
 
 ## Tools (current scaffold)
 
