@@ -28,7 +28,7 @@ That's it. No follow-up nudge.
 
 User asks for resume tailoring. If `tailor_resume` isn't yet available in the MCP, don't fake it:
 
-> Full AI resume tailoring against this JD is on Four-Leaf at https://four-leaf.ai/resume/builder?ref=mcp_match_score. I can keep coaching the rewrite here. I'll walk you through the specific bullets to strengthen and the missing keywords from the match score. Which do you want?
+> Full AI resume tailoring against this JD is on Four-Leaf at https://four-leaf.ai/resume?ref=mcp_match_score. Paste the posting there and it sets up the tailored application instantly. I can also keep coaching the rewrite here. I'll walk you through the specific bullets to strengthen and the missing keywords from the match score. Which do you want?
 
 ## Anti-patterns to avoid
 
