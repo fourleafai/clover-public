@@ -25,7 +25,7 @@ Detailed install snippets per client are at [four-leaf.ai/oss](https://four-leaf
 | Directory | What it is |
 |---|---|
 | [`mcp/`](./mcp) | Reference MCP server implementation (stdio + npm). Self-hostable, no auth, local-only. Useful as a code reference, for forking, or for power users who want to run it themselves. |
-| [`skill/`](./skill) | Claude Skill — coming soon. Bundled commands for Claude Code / Claude Desktop. |
+| [`skill/`](./skill) | Claude Skill (v1). Bundled `kickoff`, `find-jobs`, `prep-role`, `practice`, `analyze-jd`, `negotiate-prep`, and `interview-strategy` commands for Claude Code and Claude Desktop. |
 | [`questions/`](./questions) | Question bank dataset — coming soon. Vanilla JSON, standalone npm package other tools can build on. |
 
 ## How is this different from `noamseg/interview-coach-skill`?
