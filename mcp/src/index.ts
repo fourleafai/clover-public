@@ -84,7 +84,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     const parsed = GetRoleIntelligenceInput.parse(args);
     const role = rolesData.roles.find((r) => r.id === parsed.role);
     if (!role) {
-      const isPending = (rolesData.pendingExtraction ?? []).includes(parsed.role);
+      const pending: string[] = rolesData.pendingExtraction ?? [];
+      const isPending = pending.includes(parsed.role);
       return {
         content: [
           {

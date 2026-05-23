@@ -115,14 +115,229 @@
         "mustInclude": ["Product launches with metrics", "User research insights", "Cross-functional leadership examples", "Company mission alignment"],
         "avoid": ["Technical implementation details (that's the engineer's job)", "Vague product instinct claims", "No concrete examples"]
       }
+    },
+    {
+      "id": "ml_engineer",
+      "displayName": "Machine Learning Engineer",
+      "description": "ML Engineers build and deploy machine learning systems at scale, bridging the gap between research and production.",
+      "typicalDuration": "3-6 weeks, 4-6 rounds",
+      "interviewPipeline": [
+        { "name": "Recruiter Screen", "duration": "15-30 min", "format": "Phone/Video", "primaryFocus": "Background, ML experience depth, system scale experience" },
+        { "name": "Technical Phone Screen", "duration": "45-60 min", "format": "Video + Coderpad", "primaryFocus": "Coding (DSA) + basic ML concepts, 2 problems" },
+        { "name": "ML Coding Round", "duration": "45-60 min", "format": "Video + IDE", "primaryFocus": "Implement ML algorithms from scratch without libraries" },
+        { "name": "ML System Design", "duration": "45-60 min", "format": "Video + Whiteboard", "primaryFocus": "End-to-end ML system: data pipeline, features, model, serving, monitoring" },
+        { "name": "Coding (DSA)", "duration": "45-60 min", "format": "Video + Coderpad", "primaryFocus": "Algorithms/data structures, medium-hard difficulty" },
+        { "name": "Behavioral", "duration": "30-45 min", "format": "Video/In-Person", "primaryFocus": "Collaboration, handling ambiguity, impact storytelling" }
+      ],
+      "experienceLevels": {
+        "0-1": { "label": "Entry MLE", "yearsRange": "0-2 years", "technicalExpectation": "LeetCode medium, explain ML library usage, understand basic model architectures", "behavioralFocus": "Learning agility, teamwork, curiosity", "interviewWeight": { "technical": 50, "behavioral": 10, "caseOrDesign": 40 } },
+        "2-4": { "label": "Mid MLE", "yearsRange": "2-5 years", "technicalExpectation": "Medium-hard DSA, implement ML algos from scratch, end-to-end pipeline for one use case", "behavioralFocus": "Independent execution, project ownership", "interviewWeight": { "technical": 35, "behavioral": 15, "caseOrDesign": 50 } },
+        "5-9": { "label": "Senior MLE", "yearsRange": "5-8 years", "technicalExpectation": "System-level code design, multi-system ML architecture, reliability engineering", "behavioralFocus": "Technical leadership, mentoring, strategic communication", "interviewWeight": { "technical": 20, "behavioral": 25, "caseOrDesign": 55 } },
+        "10+": { "label": "Staff+ MLE", "yearsRange": "8+ years", "technicalExpectation": "Define coding standards, org-wide ML infrastructure strategy, research direction", "behavioralFocus": "Organizational influence, technical vision", "interviewWeight": { "technical": 10, "behavioral": 30, "caseOrDesign": 60 } }
+      },
+      "questionCategories": ["coding_dsa", "ml_implementation", "system_design", "ml_theory", "behavioral"],
+      "feedbackDimensions": [
+        { "name": "Implementation Correctness", "description": "Code works correctly, handles edge cases, efficient" },
+        { "name": "System Design Breadth", "description": "Covers all components: data, features, model, serving, monitoring" },
+        { "name": "Production Awareness", "description": "Understands deployment, scaling, monitoring, failure modes" },
+        { "name": "Algorithmic Efficiency", "description": "Time/space complexity analysis, optimization strategies" },
+        { "name": "ML Theory Depth", "description": "Understanding of algorithms, math, and trade-offs" }
+      ],
+      "resume": {
+        "criticalKeywords": ["TensorFlow", "PyTorch", "Kubernetes", "Docker", "MLOps", "Distributed Training", "Feature Stores", "Model Serving", "Latency Optimization", "A/B Testing", "CI/CD", "Python", "Spark", "Airflow", "Real-time ML"],
+        "achievementFraming": "Emphasize production scale ('Served 10M predictions/day'), latency improvements ('Reduced inference time from 200ms to 50ms'), system reliability ('99.9% uptime for ML services').",
+        "formatConventions": "1-2 pages. System-level accomplishments over individual models. Infrastructure experience highlighted."
+      },
+      "coverLetter": {
+        "tone": "Technical and precise, production-minded",
+        "mustInclude": ["Scale of systems worked on", "Production ML experience", "Specific technologies and infrastructure", "End-to-end ownership examples"],
+        "avoid": ["Academic-only focus without production relevance", "Vague claims about ML skills", "No mention of scale or production"]
+      }
+    },
+    {
+      "id": "data_analyst",
+      "displayName": "Data Analyst",
+      "description": "Data Analysts transform data into actionable insights, build dashboards, and support data-driven decision making.",
+      "typicalDuration": "1-3 weeks, 3-5 rounds",
+      "interviewPipeline": [
+        { "name": "Recruiter Screen", "duration": "15-30 min", "format": "Phone/Video", "primaryFocus": "Background, SQL/Excel experience, tool proficiency" },
+        { "name": "Technical Screen (SQL)", "duration": "45-60 min", "format": "Video + SQL Editor", "primaryFocus": "SQL queries of increasing complexity" },
+        { "name": "Take-Home Assignment", "duration": "3-6 hours", "format": "Async", "primaryFocus": "Investigate dataset, prepare findings, visualizations" },
+        { "name": "Onsite: SQL + Statistics", "duration": "45-60 min", "format": "Video + Editor", "primaryFocus": "Advanced SQL, basic statistics, A/B testing interpretation" },
+        { "name": "Onsite: Case Study", "duration": "45-60 min", "format": "Video", "primaryFocus": "Business scenario analysis, metric investigation, dashboard design" },
+        { "name": "Behavioral", "duration": "30-45 min", "format": "Video/In-Person", "primaryFocus": "Communication skills, attention to detail, curiosity" }
+      ],
+      "experienceLevels": {
+        "0-1": { "label": "Entry DA", "yearsRange": "0-2 years", "technicalExpectation": "Basic JOINs, GROUP BY, WHERE, simple aggregations. Mean/median, basic hypothesis testing.", "behavioralFocus": "Curiosity, attention to detail, communication", "interviewWeight": { "technical": 70, "behavioral": 20, "caseOrDesign": 10 } },
+        "2-4": { "label": "Mid DA", "yearsRange": "2-4 years", "technicalExpectation": "Window functions, CTEs, complex subqueries, A/B testing design, regression.", "behavioralFocus": "Stakeholder communication, project ownership", "interviewWeight": { "technical": 50, "behavioral": 25, "caseOrDesign": 25 } },
+        "5-9": { "label": "Senior DA", "yearsRange": "5+ years", "technicalExpectation": "Query optimization, define data models, causal inference, custom statistical methods.", "behavioralFocus": "Influence business decisions, define metrics strategy", "interviewWeight": { "technical": 35, "behavioral": 30, "caseOrDesign": 35 } },
+        "10+": { "label": "Lead/Principal", "yearsRange": "7+ years", "technicalExpectation": "Analytics strategy, team leadership, cross-functional data initiatives.", "behavioralFocus": "Leadership, strategic influence", "interviewWeight": { "technical": 25, "behavioral": 40, "caseOrDesign": 35 } }
+      },
+      "questionCategories": ["sql", "statistics", "analytical", "behavioral"],
+      "feedbackDimensions": [
+        { "name": "SQL Proficiency", "description": "Correct syntax, efficient queries, appropriate techniques" },
+        { "name": "Statistical Understanding", "description": "Correct application of statistical concepts, hypothesis testing" },
+        { "name": "Business Communication", "description": "Translates data into insights, tells stories with data" },
+        { "name": "Analytical Rigor", "description": "Systematic approach, appropriate methodology, attention to detail" },
+        { "name": "Tool Proficiency", "description": "Comfort with SQL, Excel, visualization tools" }
+      ],
+      "resume": {
+        "criticalKeywords": ["SQL", "Excel", "Tableau", "Power BI", "Python", "Pandas", "A/B Testing", "Data Visualization", "Dashboarding", "Reporting", "ETL", "Data Cleaning", "Statistical Analysis"],
+        "achievementFraming": "Quantify insights delivered ('Identified $2M savings opportunity'), dashboards built ('Created executive dashboard used by 50+ stakeholders'), analysis impact.",
+        "formatConventions": "1 page preferred. Tools section prominent. SQL proficiency must be obvious. Portfolio/GitHub link if available."
+      },
+      "coverLetter": {
+        "tone": "Curious, detail-oriented, business-aware",
+        "mustInclude": ["Insights delivered with impact", "Dashboard/reporting examples", "SQL/analysis tool proficiency", "Business problem-solving examples"],
+        "avoid": ["Just listing tools", "Not connecting analysis to business decisions", "No concrete impact examples"]
+      }
+    },
+    {
+      "id": "finance_analyst",
+      "displayName": "Financial Analyst",
+      "description": "Financial Analysts analyze financial data, build models, and provide insights to support business decisions and investments.",
+      "typicalDuration": "2-4 weeks, 4-6 rounds",
+      "interviewPipeline": [
+        { "name": "Recruiter Screen", "duration": "15-30 min", "format": "Phone/Video", "primaryFocus": "Background, finance education, certifications" },
+        { "name": "Technical Screen", "duration": "45-60 min", "format": "Video", "primaryFocus": "Financial statement analysis, basic valuation, accounting" },
+        { "name": "Excel / Modeling Test", "duration": "60-120 min", "format": "Async or Live", "primaryFocus": "Build 3-statement model, sensitivity analysis" },
+        { "name": "Technical Deep Dive", "duration": "45-60 min", "format": "Video/In-Person", "primaryFocus": "Valuation methods (DCF, comps), ratio analysis, complex accounting" },
+        { "name": "Case Study", "duration": "45-60 min", "format": "Video/In-Person", "primaryFocus": "Analyze financials, make recommendation, present findings" },
+        { "name": "Behavioral", "duration": "30-45 min", "format": "Video/In-Person", "primaryFocus": "Attention to detail, working under pressure, integrity" }
+      ],
+      "experienceLevels": {
+        "0-1": { "label": "Entry FA", "yearsRange": "0-2 years", "technicalExpectation": "Explain statement linkages, basic journal entries, build basic 3-statement model with guidance.", "behavioralFocus": "Attention to detail, learning agility, integrity", "interviewWeight": { "technical": 70, "behavioral": 20, "caseOrDesign": 10 } },
+        "2-4": { "label": "Mid FA", "yearsRange": "3-5 years", "technicalExpectation": "Complex transactions (M&A, convertible debt), full valuations independently, defend assumptions.", "behavioralFocus": "Stakeholder communication, independent execution", "interviewWeight": { "technical": 50, "behavioral": 25, "caseOrDesign": 25 } },
+        "5-9": { "label": "Senior FA", "yearsRange": "5+ years", "technicalExpectation": "Policy decisions, audit implications, model review, complex valuations (distressed, cross-border).", "behavioralFocus": "Leadership, executive communication", "interviewWeight": { "technical": 35, "behavioral": 30, "caseOrDesign": 35 } },
+        "10+": { "label": "Director+", "yearsRange": "7+ years", "technicalExpectation": "Financial strategy, technical accounting guidance, advisory-level analysis.", "behavioralFocus": "Strategic influence, team leadership", "interviewWeight": { "technical": 25, "behavioral": 40, "caseOrDesign": 35 } }
+      },
+      "questionCategories": ["accounting", "valuation", "analytical", "behavioral"],
+      "feedbackDimensions": [
+        { "name": "Accounting Precision", "description": "Correct treatment of transactions, proper statement linkages" },
+        { "name": "Valuation Methodology", "description": "Correct application of DCF, comps, precedent transactions" },
+        { "name": "Modeling Skills", "description": "Excel proficiency, logical model structure, error-checking" },
+        { "name": "Business Judgment", "description": "Reasonable assumptions, commercial awareness" },
+        { "name": "Communication", "description": "Clear explanation of complex concepts, executive presence" }
+      ],
+      "resume": {
+        "criticalKeywords": ["Financial Modeling", "DCF", "Valuation", "Excel", "3-Statement Models", "Budgeting", "Forecasting", "Variance Analysis", "Power BI", "Bloomberg", "CFA", "CPA"],
+        "achievementFraming": "Quantify deal sizes, model accuracy ('Forecasts within 3% of actuals'), process improvements ('Reduced close cycle by 2 days').",
+        "formatConventions": "1 page. Education prominent (finance/accounting/econ). Certifications section. Conservative formatting."
+      },
+      "coverLetter": {
+        "tone": "Professional, precise, commercially aware",
+        "mustInclude": ["Modeling experience", "Financial impact delivered", "Certifications if relevant (CFA, CPA)", "Industry knowledge"],
+        "avoid": ["Informal tone", "Lack of precision in financial claims", "No concrete examples"]
+      }
+    },
+    {
+      "id": "consulting",
+      "displayName": "Management Consultant",
+      "description": "Management Consultants solve complex business problems for clients across industries, combining analytical rigor with strategic thinking.",
+      "typicalDuration": "4-8 weeks, 2-3 rounds with 2-3 interviews each",
+      "interviewPipeline": [
+        { "name": "Online Assessment", "duration": "45-90 min", "format": "Async", "primaryFocus": "McKinsey: Solve game. BCG: Casey chatbot. Bain: SOVA test." },
+        { "name": "Round 1 Interview A", "duration": "30-45 min", "format": "Video/In-Person", "primaryFocus": "Case interview (profitability, market entry, growth) + 10-15 min fit" },
+        { "name": "Round 1 Interview B", "duration": "30-45 min", "format": "Video/In-Person", "primaryFocus": "Different case type + behavioral/fit questions" },
+        { "name": "Round 2 (Partner/Principal)", "duration": "30-45 min", "format": "In-Person", "primaryFocus": "More complex case + deeper behavioral probing" },
+        { "name": "Round 2 Second Interview", "duration": "30-45 min", "format": "In-Person", "primaryFocus": "Final case + extended fit conversation" }
+      ],
+      "experienceLevels": {
+        "0-1": { "label": "Associate / Entry", "yearsRange": "0-2 years", "technicalExpectation": "Standard frameworks sufficient. Single-issue cases. Clear data provided.", "behavioralFocus": "Leadership potential, teamwork, coachability", "interviewWeight": { "technical": 0, "behavioral": 40, "caseOrDesign": 60 } },
+        "2-4": { "label": "Consultant / Post-MBA", "yearsRange": "2-4 years", "technicalExpectation": "Multi-layered cases. Ambiguous data. Drive independently.", "behavioralFocus": "Professional impact, client management, team leadership", "interviewWeight": { "technical": 0, "behavioral": 40, "caseOrDesign": 60 } },
+        "5-9": { "label": "Manager / Principal", "yearsRange": "5-8 years", "technicalExpectation": "Partner-level cases. Industry expertise. Strategic recommendations with implementation.", "behavioralFocus": "Business development, practice building, organizational leadership", "interviewWeight": { "technical": 0, "behavioral": 45, "caseOrDesign": 55 } },
+        "10+": { "label": "Partner", "yearsRange": "8+ years", "technicalExpectation": "Client relationship management, firm building, thought leadership.", "behavioralFocus": "Franchise building, firm strategy", "interviewWeight": { "technical": 0, "behavioral": 50, "caseOrDesign": 50 } }
+      },
+      "questionCategories": ["case_profitability", "case_market_entry", "case_ma", "case_growth", "case_operations", "behavioral", "fit"],
+      "feedbackDimensions": [
+        { "name": "Structure & MECE", "description": "Logical framework, mutually exclusive and collectively exhaustive breakdown" },
+        { "name": "Quantitative Rigor", "description": "Comfortable with numbers, accurate calculations, data-driven conclusions" },
+        { "name": "Hypothesis-Driven", "description": "Proposes and tests hypotheses rather than boiling the ocean" },
+        { "name": "Synthesis & Recommendation", "description": "Pulls together insights into clear, actionable recommendations" },
+        { "name": "Executive Communication", "description": "Clear, concise, confident communication appropriate for senior executives" }
+      ],
+      "resume": {
+        "criticalKeywords": ["Strategy", "Operations", "Client Engagement", "Data Analysis", "Project Management", "Change Management", "Industry Expertise", "Presentation", "Stakeholder Management"],
+        "achievementFraming": "Client impact: 'Developed strategy resulting in $50M revenue opportunity.' Project scope: team size, duration, deliverables. Speed of progression.",
+        "formatConventions": "1 page strict (MBB standard). Education at top. Firm name recognition matters. Non-profit/extracurricular for juniors."
+      },
+      "coverLetter": {
+        "tone": "Structured, client-oriented, results-driven",
+        "mustInclude": ["Client impact examples", "Structured problem-solving evidence", "Team leadership", "Why this firm specifically"],
+        "avoid": ["Unstructured writing (ironic for consulting)", "Lack of concrete examples", "Generic firm motivation"]
+      }
+    },
+    {
+      "id": "investment_banking",
+      "displayName": "Investment Banking Analyst/Associate",
+      "description": "Investment Bankers advise on M&A, capital raises, and other financial transactions, known for technical rigor and demanding work environment.",
+      "typicalDuration": "4-8 weeks, multiple rounds culminating in Superday",
+      "interviewPipeline": [
+        { "name": "HireVue / Online", "duration": "30-45 min", "format": "Async Video", "primaryFocus": "Pre-recorded behavioral responses, basic technical" },
+        { "name": "Recruiter / HR Screen", "duration": "15-30 min", "format": "Phone", "primaryFocus": "Resume walk-through, Why IB?, Why this bank?" },
+        { "name": "Technical Round 1", "duration": "30-45 min", "format": "Phone/Video", "primaryFocus": "Accounting fundamentals, valuation basics" },
+        { "name": "Technical Round 2", "duration": "30-45 min", "format": "Phone/Video", "primaryFocus": "DCF mechanics, M&A concepts, LBO basics" },
+        { "name": "Superday (3-6 interviews)", "duration": "30-45 min each", "format": "In-Person", "primaryFocus": "Mix of technical, fit, deal discussion, market awareness" }
+      ],
+      "experienceLevels": {
+        "0-1": { "label": "Analyst", "yearsRange": "0-2 years", "technicalExpectation": "Solid accounting, basic valuation, can walk through DCF and comps.", "behavioralFocus": "Genuine passion, understanding of lifestyle, willingness to learn", "interviewWeight": { "technical": 60, "behavioral": 40, "caseOrDesign": 0 } },
+        "2-4": { "label": "Associate", "yearsRange": "2-4 years", "technicalExpectation": "Complex modeling, merger model, LBO. Can build from scratch.", "behavioralFocus": "Client management, process leadership, analyst mentoring", "interviewWeight": { "technical": 50, "behavioral": 50, "caseOrDesign": 0 } },
+        "5-9": { "label": "VP", "yearsRange": "5-8 years", "technicalExpectation": "Strategic advisory, complex deal structuring, market positioning.", "behavioralFocus": "Business development, client relationships, team building", "interviewWeight": { "technical": 30, "behavioral": 70, "caseOrDesign": 0 } },
+        "10+": { "label": "Director/MD", "yearsRange": "8+ years", "technicalExpectation": "Origination, franchise building, C-suite relationships.", "behavioralFocus": "Revenue generation, firm strategy", "interviewWeight": { "technical": 20, "behavioral": 80, "caseOrDesign": 0 } }
+      },
+      "questionCategories": ["accounting", "valuation", "fit"],
+      "feedbackDimensions": [
+        { "name": "Accounting Precision", "description": "Zero tolerance for errors on accounting fundamentals" },
+        { "name": "Valuation Fluency", "description": "Can walk through methodologies smoothly with understanding of drivers" },
+        { "name": "Deal Awareness", "description": "Follows financial news, can discuss recent transactions intelligently" },
+        { "name": "Cultural Fit", "description": "Interpersonal warmth under pressure; would you want this person at 2 AM?" },
+        { "name": "Professionalism", "description": "Polished, confident, appropriate demeanor" }
+      ],
+      "resume": {
+        "criticalKeywords": ["Financial Modeling", "M&A", "DCF", "LBO", "Valuation", "Pitchbooks", "Due Diligence", "Capital Markets", "Deal Execution", "Excel"],
+        "achievementFraming": "Deal experience: names, sizes, outcomes. 'Executed $2B cross-border acquisition.' Technical skills: 'Built 100+ page management presentations.' Transaction volume.",
+        "formatConventions": "1 page strict. Deals/transactions section critical. Education at top. GPA expected (if strong). Relevant activities."
+      },
+      "coverLetter": {
+        "tone": "Polished, deal-aware, culturally attuned",
+        "mustInclude": ["Deal experience or interest", "Financial acumen", "Genuine passion for finance", "Specific bank knowledge"],
+        "avoid": ["Generic finance motivation", "Lifestyle concerns", "Overly casual tone", "Exit opportunities focus"]
+      }
+    },
+    {
+      "id": "other",
+      "displayName": "Other Role",
+      "description": "A general professional role not covered by the specialized categories. Generic fallback intelligence; deeper coaching available for the named roles above.",
+      "typicalDuration": "1-3 weeks, 3-5 rounds",
+      "interviewPipeline": [
+        { "name": "Recruiter Screen", "duration": "15-30 min", "format": "Phone/Video", "primaryFocus": "Background, role fit, salary expectations" },
+        { "name": "Hiring Manager Screen", "duration": "30-45 min", "format": "Video", "primaryFocus": "Role-specific skills, career narrative" },
+        { "name": "Technical/Skills Assessment", "duration": "45-60 min", "format": "Varies", "primaryFocus": "Role-specific technical skills" },
+        { "name": "Behavioral", "duration": "30-45 min", "format": "Video/In-Person", "primaryFocus": "Collaboration, problem-solving, cultural fit" }
+      ],
+      "experienceLevels": {
+        "0-1": { "label": "Entry Level", "yearsRange": "0-2 years", "technicalExpectation": "Basic role-specific skills, willingness to learn", "behavioralFocus": "Teamwork, learning agility, curiosity", "interviewWeight": { "technical": 50, "behavioral": 40, "caseOrDesign": 10 } },
+        "2-4": { "label": "Mid Level", "yearsRange": "2-5 years", "technicalExpectation": "Independent execution of role responsibilities", "behavioralFocus": "Project ownership, collaboration", "interviewWeight": { "technical": 40, "behavioral": 40, "caseOrDesign": 20 } },
+        "5-9": { "label": "Senior", "yearsRange": "5-8 years", "technicalExpectation": "Expert-level skills, can mentor others", "behavioralFocus": "Leadership, strategic thinking", "interviewWeight": { "technical": 30, "behavioral": 40, "caseOrDesign": 30 } },
+        "10+": { "label": "Director+", "yearsRange": "8+ years", "technicalExpectation": "Strategic direction, team building", "behavioralFocus": "Organizational influence, vision", "interviewWeight": { "technical": 20, "behavioral": 50, "caseOrDesign": 30 } }
+      },
+      "questionCategories": ["behavioral"],
+      "feedbackDimensions": [
+        { "name": "Content Quality", "description": "Accuracy and relevance of response" },
+        { "name": "Communication", "description": "Clarity and professionalism" },
+        { "name": "Problem-Solving", "description": "Structured approach to challenges" }
+      ],
+      "resume": {
+        "criticalKeywords": ["Varies by role"],
+        "achievementFraming": "Quantify impact, show progression, highlight relevant skills.",
+        "formatConventions": "1-2 pages, clean formatting, relevant experience highlighted."
+      },
+      "coverLetter": {
+        "tone": "Professional, enthusiastic, role-appropriate",
+        "mustInclude": ["Relevant experience", "Company interest", "Value proposition"],
+        "avoid": ["Generic statements", "Unexplained gaps", "Irrelevant information"]
+      }
     }
   ],
-  "pendingExtraction": [
-    "ml_engineer",
-    "data_analyst",
-    "finance_analyst",
-    "consulting",
-    "investment_banking",
-    "other"
-  ]
+  "pendingExtraction": []
 }
