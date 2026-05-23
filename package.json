@@ -1,0 +1,10 @@
+{
+  "name": "four-leaf-coach",
+  "version": "0.1.0",
+  "description": "Open-source job search and interview prep Skill, with a per-tool build pipeline.",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js"
+  }
+}
