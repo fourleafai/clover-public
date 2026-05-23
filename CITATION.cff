@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+title: "four-leaf-coach"
+abstract: "Open-source Claude / Cursor / OpenAI Codex / GitHub Copilot Skill plus hosted MCP integration for job search and interview prep. Live job postings, role-specific interview intelligence, the curated question bank, resume scoring, with paid-tier deep-links into voice mock interviews and AI resume tailoring on four-leaf.ai."
+type: software
+authors:
+  - name: "Four-Leaf"
+    website: "https://four-leaf.ai"
+    email: "team@four-leaf.ai"
+repository-code: "https://github.com/fourleafai/clover-public"
+url: "https://four-leaf.ai"
+keywords:
+  - mcp
+  - mcp-server
+  - claude
+  - claude-skill
+  - cursor
+  - openai-codex
+  - interview-prep
+  - job-search
+  - career
+  - resume
+  - ai-tools
+license: MIT

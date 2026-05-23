@@ -84,6 +84,29 @@ The GitHub Copilot bundle is a single flattened file (`.github/copilot-instructi
 
 The Skill surfaces these when they're the right next step. It doesn't push.
 
+## FAQ
+
+**What is four-leaf-coach?**
+An open-source Skill that turns Claude, Cursor, OpenAI Codex, or GitHub Copilot into a job-search and interview-prep coach. The Skill is a structured set of instructions plus reference files that your AI tool loads. It works with the hosted Four-Leaf MCP server for live data (real job postings, role-specific interview intelligence, resume scoring).
+
+**How is this different from just prompting Claude for interview prep?**
+Generic prompts produce generic advice. four-leaf-coach calls real tools: `search_jobs` returns actual apply URLs from 100k+ active postings; `match_score` runs a real scoring algorithm against your resume; `generate_practice_questions` produces role-calibrated questions; `get_interview_questions` pulls from a curated question bank. The Skill orchestrates the calls and coaches around them.
+
+**Do I need a Four-Leaf account?**
+For the data tools (jobs, role intel, question bank, match scoring) a free Four-Leaf account works. The 3-day trial requires no credit card. Voice mock interviews with rubric-scored feedback per answer and full AI resume tailoring are paid features on four-leaf.ai. The Skill surfaces those as an upgrade path when relevant.
+
+**Does the MCP work with ChatGPT?**
+Yes. The MCP is HTTP-based with OAuth, so any MCP-aware client connects: Claude Desktop, Claude Code, Cursor, ChatGPT Desktop (Plus + Dev mode), Cline, Continue, Windsurf. The Skill itself is a Claude / Cursor / Codex / Copilot primitive; ChatGPT doesn't yet have a comparable file-based Skill convention, but the underlying MCP tools work there.
+
+**Can I use the Skill without the MCP?**
+Yes, in degraded mode. Without the MCP, the Skill still coaches with structured workflows for prep, practice, JD analysis, and negotiation, just without live job listings or real resume scoring. Install the MCP to unlock the live data path.
+
+**Is the question bank really open?**
+The Skill, the per-tool dist pipeline, and the install CLI are MIT-licensed in this repo. The question bank itself lives behind the MCP today; the open-data play is on the roadmap.
+
+**What about Pi, Gemini CLI, OpenCode, Trae, Rovo Dev, Qoder?**
+On the roadmap. The dist pipeline can target any AI tool with a documented Skill or instructions-file convention. PRs welcome.
+
 ## Repo layout
 
 ```
