@@ -33,15 +33,16 @@ cd clover-public
 
 Then run one command for your tool:
 
-| Tool | One-line install | Scope |
-|---|---|---|
-| Claude Code (project) | `cd /path/to/your/project && mkdir -p .claude/skills/four-leaf-coach && cp -r /path/to/clover-public/SKILL.md /path/to/clover-public/references .claude/skills/four-leaf-coach/` | project |
-| Claude Code (global) | `mkdir -p ~/.claude/skills/four-leaf-coach && cp -r SKILL.md references ~/.claude/skills/four-leaf-coach/` | user-wide |
-| Cursor (Nightly + Agent Skills enabled) | `cd /path/to/your/project && mkdir -p .cursor/skills/four-leaf-coach && cp -r /path/to/clover-public/SKILL.md /path/to/clover-public/references .cursor/skills/four-leaf-coach/` | project |
-| OpenAI Codex CLI | `cp SKILL.md AGENTS.md` (work in this cloned dir, or move both `AGENTS.md` and `references/` to your project root) | cwd |
-| GitHub Copilot | `cd /path/to/your/project && mkdir -p .github && cp /path/to/clover-public/SKILL.md .github/copilot-instructions.md` | repo |
+All install commands assume you're inside the cloned `clover-public` directory. The `cp -r SKILL.md references` part is the same across tools; only the destination changes.
 
-Cursor requires the Nightly channel with **Settings → Rules → Agent Skills** enabled. Other tools work out of the box.
+| Tool | Install | Scope |
+|---|---|---|
+| Claude Code (global, all projects) | `mkdir -p ~/.claude/skills/four-leaf-coach && cp -r SKILL.md references ~/.claude/skills/four-leaf-coach/` | user-wide |
+| Claude Code (single project) | `mkdir -p PROJECT/.claude/skills/four-leaf-coach && cp -r SKILL.md references PROJECT/.claude/skills/four-leaf-coach/` (replace `PROJECT` with your project path) | project |
+| Cursor (Nightly + Agent Skills enabled) | `mkdir -p PROJECT/.cursor/skills/four-leaf-coach && cp -r SKILL.md references PROJECT/.cursor/skills/four-leaf-coach/` | project |
+| OpenAI Codex CLI | `cp SKILL.md AGENTS.md`, then run Codex from inside the cloned directory (so `references/` is alongside) | cwd |
+
+Cursor requires the Nightly channel with **Settings → Rules → Agent Skills** enabled. Other tools work out of the box. GitHub Copilot support is coming with the npm CLI (see roadmap below).
 
 ### Step 2: install the Four-Leaf MCP for live data
 
@@ -85,6 +86,14 @@ references/
     negotiate-prep.md
     interview-strategy.md
 ```
+
+## Roadmap
+
+- **Per-tool `dist/` bundles** generated from this source so each install is exactly the layout that tool expects.
+- **`npx four-leaf-coach add`** npm CLI that auto-detects your tool and installs in one command.
+- **GitHub Copilot support** (single-file flattened variant of the Skill, shipped via the dist pipeline).
+- **Coverage for more tools** as their Skill conventions stabilize: Pi, Gemini CLI, OpenCode, Trae, Rovo Dev, Qoder.
+- **Registry submissions** to every Skill aggregator that ships a public registry.
 
 ## Contributing
 
