@@ -1,0 +1,10 @@
+# The published package is driven by the "files" allowlist in package.json.
+# This file exists so npm doesn't fall back to .gitignore, which excludes the
+# generated dist/ bundles that the package needs to ship.
+node_modules/
+.DS_Store
+.env
+.env.*
+.github/
+.claude/
+tasks/

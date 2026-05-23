@@ -13,4 +13,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - run: npm run build
+      - name: Build dist bundles
+        run: npm run build
+      - name: CLI smoke test
+        run: |
+          node bin/four-leaf-coach.js --help
+          node bin/four-leaf-coach.js list
+      - name: Pack sanity check
+        run: npm pack --dry-run

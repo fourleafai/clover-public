@@ -1,10 +1,46 @@
 {
   "name": "four-leaf-coach",
-  "version": "0.1.0",
-  "description": "Open-source job search and interview prep Skill, with a per-tool build pipeline.",
+  "version": "0.2.0",
+  "description": "One-command installer for the four-leaf-coach Skill: a job search and interview prep coach for Claude Code, Cursor, Codex, and GitHub Copilot, backed by the hosted Four-Leaf MCP.",
   "license": "MIT",
-  "private": true,
+  "private": false,
+  "bin": {
+    "four-leaf-coach": "./bin/four-leaf-coach.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "scripts",
+    "SKILL.md",
+    "references",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "prepack": "node scripts/build.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "claude",
+    "cursor",
+    "codex",
+    "copilot",
+    "skill",
+    "interview",
+    "job-search",
+    "interview-prep",
+    "career"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fourleafai/clover-public.git"
+  },
+  "homepage": "https://github.com/fourleafai/clover-public#readme",
+  "bugs": {
+    "url": "https://github.com/fourleafai/clover-public/issues"
   }
 }
