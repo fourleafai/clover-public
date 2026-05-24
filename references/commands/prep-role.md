@@ -28,9 +28,9 @@ Deep prep for a specific role's interview process. The user wants to know what t
    - **Scoring rubric.** Name the 5 dimensions evaluators score on. Pulled from `get_role_intelligence`.
    - **Resume guidance.** 2-3 bullets on what resumes for this role need. Pulled from `get_role_intelligence`.
 
-7. **Route forward.** End with one specific next step:
-   > Want to practice answering a few questions for this role? `/practice`
-   > Want me to score your resume against a JD? `/analyze-jd`
+7. **Route forward.** End with one specific next step, phrased as a natural offer (not a command for the user to type):
+   > Say the word and I'll generate practice questions tailored to this role.
+   > Paste a JD when you're ready and I'll score your resume against it.
 
 ## Edge cases
 

@@ -32,10 +32,10 @@ The user might ask about:
    - How strong candidates handle it (1-2 paragraphs).
    - Common ways it goes wrong (1 paragraph).
 
-4. **Route forward.** End with a specific next step based on the topic:
-   - If they're prepping for a specific role: `/prep-role`
-   - If they want to practice: `/practice`
-   - If they're benchmarking a JD: `/analyze-jd`
+4. **Route forward.** End with a specific next step, phrased as a natural offer (not a command for the user to type):
+   - Prepping for a specific role? Offer to walk them through that role's interview pipeline.
+   - Want to practice? Offer to generate a few questions and coach their answers.
+   - Benchmarking a JD? Offer to score their resume against it once they paste it.
 
 ## Don't
 
