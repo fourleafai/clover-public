@@ -8,15 +8,15 @@ Free to install and use. Voice mock interviews with rubric-scored feedback and f
 
 Walks a user through prep for a specific role at a specific company. The Skill greets, asks what they're prepping for, and routes them into one of seven guided workflows. Every workflow pulls live data from the Four-Leaf MCP (jobs, role intel, question bank, match scoring) and adds the Skill's coaching on top.
 
-The seven commands:
+You don't type these as commands. Say what you want in plain language and the coach routes to the right workflow:
 
-- `kickoff` figures out what the user is prepping for and routes them
-- `find-jobs <query>` runs natural language search across 100k+ active postings
-- `prep-role <role> [company] [seniority]` covers interview pipeline, what to expect, how to win
-- `practice <role> [type] [difficulty]` generates calibrated questions and coaches answers
-- `analyze-jd` scores a resume against a JD and points out gaps
-- `negotiate-prep` walks through a compensation negotiation framework
-- `interview-strategy <topic>` covers formats, AI interviewers, work trials, signal vs noise
+- **Kickoff** the coach figures out what you're prepping for and routes you. Say "help me get ready for my job search".
+- **Find jobs** natural-language search across 100k+ active postings. Say "find me remote senior data scientist roles".
+- **Prep for a role** interview pipeline, what to expect, how to win. Say "what's the interview like for a PM at Stripe".
+- **Practice** calibrated questions with coaching on your answers. Say "give me a few hard system design questions".
+- **Analyze a JD** scores a resume against a posting and points out gaps. Say "how does my resume stack up against this JD".
+- **Negotiate** a compensation negotiation framework. Say "they made an offer, help me negotiate".
+- **Interview strategy** formats, AI interviewers, work trials, signal vs noise. Say "what are AI interviews actually like".
 
 ## Install
 
@@ -53,7 +53,7 @@ For Cursor, ChatGPT Desktop, and other MCP-aware tools, configure the same URL (
 
 ### Step 3: use it
 
-In your tool, type `/kickoff` (or `kickoff` if your tool doesn't use slash commands). The coach takes it from there.
+Once it's installed, just tell the coach what you need in plain language. Say something like "help me prep for a senior software engineer interview at Google" and it takes it from there. There are no subcommands to memorize; the coach routes based on what you ask. (In Claude Code you can also invoke it explicitly with `/four-leaf-coach`.)
 
 ## Manual install
 
