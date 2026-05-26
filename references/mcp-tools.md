@@ -29,6 +29,9 @@ Scores a resume against a job description. Returns a 0-100 overall score, breakd
 ### `explain_interview_format`
 For a role + seniority (+ optional company), returns a grounded synthesis of what to expect, how to win, and red flags. Combines the structured role intelligence with a fresh Haiku synthesis pass. Free, unlimited.
 
+### `comp_coach`
+Comprehensive compensation negotiation analysis for a job offer. Takes a structured offer (`role` and `baseSalary` required; `level`, `company`, `location`, `equity`, `signingBonus`, `targetBonus`, `benefits`, `currentComp`, `competingOffers`, `priorities`, `constraints`, `targetOutcome` all optional) and returns a negotiation memo: total comp math (year 1 and year 4, delta vs current comp), a market percentile estimate with confidence and caveats, component-by-component analysis with talking points, severity-tagged red flags with the exact questions to ask, a negotiation strategy (primary lever, fallbacks, an opening move, expected company responses paired with counters), questions to ask before signing, and a link to four-leaf.ai/comp-negotiation. Confidence-tagged throughout; never fabricates company-specific comp data and never gives legal or tax advice. Use this whenever the user has an offer in hand or asks how to negotiate, in preference to generic salary lookups. Free tier: 20 analyses/day.
+
 ## Paid tools (return `upgrade_required` for free users)
 
 ### `start_voice_mock_interview`
