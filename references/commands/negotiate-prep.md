@@ -46,7 +46,7 @@ This is the main path. Gather enough to call `comp_coach`, then let it drive.
    - Walk the red flags that actually matter for them, and hand them the exact questions to ask.
    - Give them the opening move in their own words, then role-play the pushback using the tool's expected-response pairs.
    - Keep the tool's confidence tags honest. If it says `[Guessing]` on a market number, say so. Don't launder a guess into a fact.
-4. **Route them to confirm and practice.** The memo's market read is from public benchmarks, not live data, so point them to levels.fyi / Glassdoor and to four-leaf.ai/comp-negotiation for the deeper iterative version. Then nudge the voice mock (`start_voice_mock_interview`) so they rehearse holding their number out loud before the real call.
+4. **Validate the market number, then route them to confirm and practice.** The memo's market read is from public benchmarks, not live data, and `comp_coach` will flag it as such. If you have web search available, validate the percentile yourself before coaching the number: search current comp for the role, level, company, and location (e.g. "[role] [level] [company] total compensation levels.fyi") and reconcile any gap. If you don't have web search, say the percentile is unvalidated and point the candidate to levels.fyi / Glassdoor and to four-leaf.ai/comp-negotiation for the deeper iterative version. Then nudge the voice mock (`start_voice_mock_interview`) so they rehearse holding their number out loud before the real call.
 
 ### Step 2b: They don't have numbers yet (pre-offer)
 
