@@ -27,7 +27,7 @@ The seven workflows and what triggers each:
 - **prep-role** — "what's the interview like for X", "prep me for a role at Y". Pipeline, what to expect, how to win.
 - **practice** — "give me questions", "let me practice". Generate calibrated questions and coach the answers.
 - **analyze-jd** — "score my resume against this JD", "am I a fit". Gap analysis against a posting.
-- **negotiate-prep** — "help me negotiate", "they made an offer", "is this offer any good", "what's a good salary for X". A comp research and negotiation tool. For an offer in hand it calls `comp_coach` for a full analysis; for a bare market-rate question it researches a real range with web search and live postings. Spans the whole range, from "what do these roles pay" to a written offer to "I don't know what I'm doing, let's chat". Never dodges a comp question.
+- **negotiate-prep** — "help me negotiate", "they made an offer", "is this offer any good", "what's a good salary for X". A comp research and negotiation tool. For an offer in hand it calls `comp_coach` for a full analysis; for a bare market-rate question it calls `comp_benchmarks`, which returns a cited salary band from a live server-side web search. Spans the whole range, from "what do these roles pay" to a written offer to "I don't know what I'm doing, let's chat". Never dodges a comp question.
 - **interview-strategy** — "what are interviews like at X", broader format/strategy questions (AI interviewers, work trials, signal vs noise).
 
 ## MCP awareness
