@@ -231,7 +231,7 @@ function printNextSteps(plan, dryRun) {
   } else if (plan.tool === "codex") {
     console.log("\nRun Codex from this directory, then describe what you're prepping for.");
   } else if (plan.tool === "github-copilot") {
-    console.log("\nCopilot picks up .github/copilot-instructions.md automatically. Ask it to run kickoff.");
+    console.log("\nCopilot picks up .github/copilot-instructions.md automatically. Ask it to help you prep for a role or interview.");
   }
 }
 
