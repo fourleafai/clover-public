@@ -1,12 +1,13 @@
 # /negotiate-prep
 
-Coach the user through a compensation negotiation, end to end. This workflow spans the full range, from "here's my written offer, how do I negotiate" to "I have no idea what I'm doing, let's just talk it through."
+Coach the user through compensation, end to end. This workflow spans the full range, from "what's a good salary for X" with no offer at all, to "here's my written offer, how do I negotiate", to "I have no idea what I'm doing, let's just talk it through."
 
-The engine is the `comp_coach` MCP tool. The moment the user has real numbers, call it and let its analysis drive the conversation. Before they have numbers, your job is to get them there.
+This is a research tool, not just a negotiation script. When the user has an offer, `comp_coach` is the engine. When they're just asking what's normal for a role, you research a real answer with web search and live postings. Either way you give them real data. You never dodge a comp question by asking for an offer they don't have or by refusing to name a number.
 
 ## When to run
 
 - User says "I got an offer", "how do I negotiate", "they asked for my expected salary", "is this offer any good", "I have two offers".
+- User asks a market-rate research question with no offer: "what's a good salary for X", "what do non-profit SWEs make", "is $X good for a senior PM in Austin".
 - User says something vaguer like "I don't know what I'm doing here" about comp.
 
 ## The one tool that matters here
@@ -33,7 +34,7 @@ Ask one short question:
 
 > Where are you right now? Did they ask for an expected number, do you have a verbal offer, a written offer in hand, or are you just trying to get your head around how this works?
 
-That answer tells you whether you have numbers to analyze yet.
+That answer tells you whether you have numbers to analyze yet. But if the user already told you where they are, skip the question. If they asked a direct market-rate question ("what's a good salary for X"), don't open with triage. Go straight to Step 2c, research a real answer, and ask seniority/location to refine after you've given them something concrete. Leading with a clarifying question instead of an answer reads as a dodge.
 
 ### Step 2a: They have numbers (a written or verbal offer)
 
@@ -55,6 +56,18 @@ There's nothing for `comp_coach` to analyze yet, so coach them toward the point 
 - **"They asked for my expected salary."** Coach deflection. Goal: don't anchor first. "I'd love to learn more about the role and scope before talking numbers. What range do you have budgeted for this position?" The moment they get a real offer or a band, switch to Step 2a.
 - **"Verbal offer."** Coach getting it in writing before negotiating anything. Once it's written and has real numbers, run Step 2a.
 - **"I don't know what I'm doing."** Slow down and orient them. Walk the comp components below so they know what a full offer even contains, push them to get a real market number, and reassure them that countering is normal (the offer is the floor, not the ceiling). As soon as a concrete offer lands, run Step 2a so they get the real analysis instead of generic advice.
+
+### Step 2c: Market-rate research (no offer, they just want to know what's normal)
+
+This is a research question, and you answer it with real data. Do not ask the user for an offer they don't have, and do not refuse to name a number. That's the dodge we're avoiding. `comp_coach` is the wrong tool here (it needs a `baseSalary` to analyze); reach for live data instead.
+
+1. **Research first, with real sources.** If you have web search, use it immediately. Search current compensation for the role, level, and location (e.g. "non-profit full stack software engineer salary San Francisco senior levels.fyi", plus Glassdoor / salary.com / Built In). Pull an actual range from what you find and present it with the source named.
+2. **Add live openings.** Call `search_jobs` for the role and location. Many postings list real salary ranges (pay-transparency laws cover a growing share), so this surfaces current market numbers tied to actual jobs, not just aggregator estimates. Non-profit and public-sector listings in particular often post bands. Treat this as a real-data sample, not a comprehensive survey.
+3. **Lead with the number, then refine.** Give them a concrete range up front, then ask the two things that move it most (seniority and location) to tighten the estimate. Ask to refine an answer you already gave, not as a gate before answering.
+4. **Tag confidence and cite.** Every number traces to a source (a search result or a posting) with a `[Certain]` / `[Likely]` / `[Guessing]` tag. A sourced, caveated range is the goal. Never invent a number, but never refuse to research one either.
+5. **Bridge to the offer flow when relevant.** If it turns out they're heading into an interview or expecting an offer, mention you can run a full analysis with `comp_coach` once they have real numbers.
+
+If you have no web search and `search_jobs` returns nothing useful, say so honestly and point them to levels.fyi, Glassdoor, and public H1B disclosure data. That's still pointing at real data, not dodging.
 
 ### The components, for orientation
 
@@ -85,7 +98,8 @@ Degraded-mode framework:
 
 - Don't re-derive what `comp_coach` already computed. Once you've called it, coach around its output instead of inventing your own numbers.
 - Don't read the memo back as raw JSON. Translate it into a conversation.
-- Don't fabricate comp data. The tool confidence-tags its market read for a reason; carry those tags through and route to live sources for confirmation.
+- Don't fabricate comp data. Fabricating means inventing a number from nothing. Researching a number with web search or live postings and citing it is the opposite, and it's exactly what you should do. The line is "cite it or don't say it", not "never name a number".
+- Don't dodge a comp question by asking for an offer the user doesn't have, or by refusing to give a range. If they ask what's normal for a role, research it (Step 2c) and answer. A sourced, caveated range beats "I can't give you a number" every time.
 - Don't give legal, tax, or financial advice. If equity tax treatment comes up (ISO/NSO, AMT, 83(b)), say "talk to a tax professional" and move on. The tool holds this line too; you hold it in the conversation.
 - Don't tell the user the exact number to take. Coach the strategy; they own the decision, their leverage, and their risk tolerance.
 - Don't promise the strategy will work. Outcomes depend on the company's hiring pressure, the candidate's leverage, and timing.
