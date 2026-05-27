@@ -216,21 +216,22 @@ async function runInstall(plan, { dryRun }) {
   }
 }
 
-function printNextSteps(plan) {
+function printNextSteps(plan, dryRun) {
   const scopeNote = plan.tool === "claude-code" ? ` (${plan.scope})` : "";
-  console.log(`\nInstalled ${SKILL_NAME} for ${TOOL_LABELS[plan.tool]}${scopeNote}.`);
+  const verb = dryRun ? "[dry-run] Would install" : "Installed";
+  console.log(`\n${verb} ${SKILL_NAME} for ${TOOL_LABELS[plan.tool]}${scopeNote}.`);
 
   console.log("\nNext step: install the Four-Leaf MCP for live data.");
   console.log(`  ${MCP_CMD}`);
 
   if (plan.tool === "claude-code") {
-    console.log("\nThen type /kickoff in Claude to start.");
+    console.log("\nThen just describe what you're prepping for.");
   } else if (plan.tool === "cursor") {
-    console.log("\nEnable Agent Skills (Settings, Rules, Agent Skills on the Nightly channel), then type /kickoff.");
+    console.log("\nEnable Agent Skills (Settings, Rules, Agent Skills on the Nightly channel), then describe what you're prepping for.");
   } else if (plan.tool === "codex") {
-    console.log("\nRun Codex from this directory, then type kickoff to start.");
+    console.log("\nRun Codex from this directory, then describe what you're prepping for.");
   } else if (plan.tool === "github-copilot") {
-    console.log("\nCopilot picks up .github/copilot-instructions.md automatically. Ask it to run kickoff.");
+    console.log("\nCopilot picks up .github/copilot-instructions.md automatically. Ask it to help you prep for a role or interview.");
   }
 }
 
@@ -332,7 +333,7 @@ async function cmdAdd(opts) {
 
   // 4. Install.
   await runInstall(plan, { dryRun: opts.dryRun });
-  printNextSteps(plan);
+  printNextSteps(plan, opts.dryRun);
 }
 
 /* --------------------------------- list ---------------------------------- */
