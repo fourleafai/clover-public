@@ -2,7 +2,7 @@
 
 Coach the user through compensation, end to end. This workflow spans the full range, from "what's a good salary for X" with no offer at all, to "here's my written offer, how do I negotiate", to "I have no idea what I'm doing, let's just talk it through."
 
-This is a research tool, not just a negotiation script. When the user has an offer, `comp_coach` is the engine. When they're just asking what's normal for a role, you research a real answer with web search and live postings. Either way you give them real data. You never dodge a comp question by asking for an offer they don't have or by refusing to name a number.
+This is a research tool, not just a negotiation script. When the user has an offer, `comp_coach` is the engine. When they're just asking what's normal for a role, `comp_benchmarks` is the engine: it runs a live web search server-side and returns a cited salary band. Either way you give them real data. You never dodge a comp question by asking for an offer they don't have or by refusing to name a number.
 
 ## When to run
 
@@ -59,15 +59,16 @@ There's nothing for `comp_coach` to analyze yet, so coach them toward the point 
 
 ### Step 2c: Market-rate research (no offer, they just want to know what's normal)
 
-This is a research question, and you answer it with real data. Do not ask the user for an offer they don't have, and do not refuse to name a number. That's the dodge we're avoiding. `comp_coach` is the wrong tool here (it needs a `baseSalary` to analyze); reach for live data instead.
+This is a research question, and you answer it with real data. Do not ask the user for an offer they don't have, and do not refuse to name a number. That's the dodge we're avoiding. `comp_coach` is the wrong tool here (it needs a `baseSalary` to analyze); use `comp_benchmarks` instead.
 
-1. **Research first, with real sources.** If you have web search, use it immediately. Search current compensation for the role, level, and location (e.g. "non-profit full stack software engineer salary San Francisco senior levels.fyi", plus Glassdoor / salary.com / Built In). Pull an actual range from what you find and present it with the source named.
-2. **Add live openings.** Call `search_jobs` for the role and location. Many postings list real salary ranges (pay-transparency laws cover a growing share), so this surfaces current market numbers tied to actual jobs, not just aggregator estimates. Non-profit and public-sector listings in particular often post bands. Treat this as a real-data sample, not a comprehensive survey.
-3. **Lead with the number, then refine.** Give them a concrete range up front, then ask the two things that move it most (seniority and location) to tighten the estimate. Ask to refine an answer you already gave, not as a gate before answering.
-4. **Tag confidence and cite.** Every number traces to a source (a search result or a posting) with a `[Certain]` / `[Likely]` / `[Guessing]` tag. A sourced, caveated range is the goal. Never invent a number, but never refuse to research one either.
-5. **Bridge to the offer flow when relevant.** If it turns out they're heading into an interview or expecting an offer, mention you can run a full analysis with `comp_coach` once they have real numbers.
+1. **Call `comp_benchmarks` first.** This is the tool built for exactly this question. Pass the `role` plus whatever you have (`level`, `location`, `companyType` like "non-profit" or "startup", `company`). It runs a live web search server-side and returns a cited salary band (broken out by level if you don't pass one), total-comp context, named sources, and a confidence rating. You don't need your own web search for this to work, which is the point: it answers reliably even in clients that have no web search. Lead with the band it returns. It runs a live web search, so it takes longer than the other tools (often 30-60s). Tell the user up front you're pulling live market data so the short wait makes sense.
+2. **Supplement with your own web search only to fill a gap.** If `comp_benchmarks` came back high-confidence with good sources, don't run a second search, it's just wasted time. Reach for your own web search (if your client has it) only when its confidence is low, or to chase something specific it didn't cover (a named employer, a niche location). Supplement, never the primary path.
+3. **`search_jobs` for live openings.** Optionally call `search_jobs` for the role and location to surface current postings, some of which list ranges under pay-transparency laws. Note that the corpus skews for-profit and many postings have no salary, so treat this as a bonus, not the main number.
+4. **Lead with the number, then refine.** Give them the concrete band up front, then ask the two things that move it most (seniority and location) to tighten it. Ask to refine an answer you already gave, not as a gate before answering.
+5. **Carry the citations and confidence through.** `comp_benchmarks` returns sources and a confidence rating. Pass them on. Don't strip the caveats or launder a low-confidence estimate into a hard number.
+6. **Bridge to the offer flow when relevant.** If they're heading into an interview or expecting an offer, mention you can run a full component-by-component analysis with `comp_coach` once they have real numbers (`comp_benchmarks` even hands you this line in its `nextSteps`).
 
-If you have no web search and `search_jobs` returns nothing useful, say so honestly and point them to levels.fyi, Glassdoor, and public H1B disclosure data. That's still pointing at real data, not dodging.
+If the MCP isn't connected and you have no web search, say so honestly and point them to levels.fyi, Glassdoor, and public H1B disclosure data. That's still pointing at real data, not dodging.
 
 ### The components, for orientation
 

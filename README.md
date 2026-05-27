@@ -15,7 +15,7 @@ You don't type these as commands. Say what you want in plain language and the co
 - **Prep for a role** interview pipeline, what to expect, how to win. Say "what's the interview like for a PM at Stripe".
 - **Practice** calibrated questions with coaching on your answers. Say "give me a few hard system design questions".
 - **Analyze a JD** scores a resume against a posting and points out gaps. Say "how does my resume stack up against this JD".
-- **Negotiate** live offer analysis from the MCP (total comp, market percentile, red flags, a counter strategy with exact talking points) plus coaching around it. Say "they made an offer, help me negotiate" or "is this offer any good".
+- **Negotiate and comp research** real numbers from the MCP. Have an offer? It runs a full analysis (total comp, market percentile, red flags, a counter strategy with exact talking points). Just asking what a role pays? It returns a cited salary band from a live web search. Say "they made an offer, help me negotiate", "is this offer any good", or "what's a good salary for a backend engineer in Austin".
 - **Interview strategy** formats, AI interviewers, work trials, signal vs noise. Say "what are AI interviews actually like".
 
 ## Install
