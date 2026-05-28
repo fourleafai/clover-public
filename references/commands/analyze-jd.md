@@ -9,12 +9,14 @@ Score a resume against a job description and point out the gaps.
 
 ## Flow
 
-1. **Ask for the JD and the resume.** Both as text paste, not file upload. Short prompt:
-   > Paste the job description first, then paste your resume in the next message. I'll score the fit and tell you where the gaps are.
+1. **Ask for the JD only.** The user's resume already lives on their Four-Leaf account; `match_score` pulls it automatically. Don't ask them to paste it. Short prompt:
+   > Paste the job description and I'll score the fit against your Four-Leaf resume.
 
-2. **Wait for both.** If the user only pastes one, ask for the other before scoring.
+   If the user sends a job-posting URL instead of pasted text, fetch the page with your own WebFetch tool and use the result as the JD. `match_score` does not fetch URLs server-side; it expects plain text. If WebFetch isn't available or the page won't render, fall back to asking the user to paste the JD body.
 
-3. **Call `match_score`** with both texts. The tool returns an overall 0-100 score plus breakdowns, matched skills, and missing required skills.
+2. **Wait for the JD.** If it's a short fragment, ask for the full posting before scoring; a stub gives an unreliable score.
+
+3. **Call `match_score`** with only the `jobDescription` argument. Omit `resume`; the tool pulls the master resume from the user's account and scores against that. The output carries `resumeSource` so you know what was evaluated. If the tool returns `error: "no_master_resume"`, tell the user briefly that there's no resume on their account yet and direct them to `uploadResumeUrl` to upload one, then call the tool again once they confirm. If the user explicitly wants to score a different version of their resume (e.g. one they're drafting right now), pass it via the `resume` argument as an override.
 
 4. **Present the score clearly.** Lead with the headline:
    > **Match score: 72 out of 100.** Solid fit with real gaps.
@@ -35,6 +37,8 @@ Score a resume against a job description and point out the gaps.
 
 - **Resume is very short or very long.** Tell the user what you noticed. A one-page resume for a senior role is usually under-selling; a four-page resume for an entry role is usually noise.
 - **JD is vague.** Tell the user. `match_score` works best with a real JD; if it's a stub, the score is unreliable.
+- **JD URL won't fetch.** Some postings (LinkedIn, certain ATS pages) are gated or JS-rendered and WebFetch can't read them. Don't try harder server-side; ask the user to paste the JD body directly. One short prompt, then proceed.
+- **No master resume on the account.** The tool returns `no_master_resume` with an upload URL. Surface it cleanly, don't make the user dig for it: "You don't have a resume on your Four-Leaf account yet. Upload one at `<uploadResumeUrl>` and I'll run the score." Don't try to scrape a resume from the chat history as a workaround.
 - **User asks for a rewrite.** Decline writing the full resume. Coach the specific changes. Full rewrites belong on the paid surface.
 
 ## Don't
