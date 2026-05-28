@@ -24,7 +24,7 @@ Natural-language search across 100k+ active job postings (Greenhouse, Lever, Ash
 Generates 1-10 fresh practice questions for a role + question type + difficulty + optional company. Returns questions only (no sample answers, no scoring criteria, no hints). Free tier: 20 generations/day. Pair with the Skill's own coaching for answer feedback.
 
 ### `match_score`
-Scores a resume against a job description. Returns a 0-100 overall score, breakdowns for skills / experience / role alignment, matched skills, and missing required skills. Useful for "should I apply?" or "what should I tailor?" decisions. Free tier: 20 scores/day.
+Scores a resume against a job description. Inputs: `resume` is **optional** — omit it and the tool scores the user's Four-Leaf master resume (the common path, since every MCP user is signed in); pass it only to override with a different version (A/B testing). `jobDescription` is required and must be plain text — if the user shared a job-posting URL, fetch the page with your own WebFetch tool and pass the result here, because this tool does NOT fetch URLs server-side. Returns a 0-100 overall score, breakdowns for skills / experience / role alignment, matched skills, missing required skills, and a `resumeSource: "master" | "pasted"` field so you can tell the user what was evaluated. If the user has no master resume on their account, returns a `no_master_resume` error carrying an `uploadResumeUrl` — surface that link so they can upload one and retry. Free tier: 20 scores/day.
 
 ### `explain_interview_format`
 For a role + seniority (+ optional company), returns a grounded synthesis of what to expect, how to win, and red flags. Combines the structured role intelligence with a fresh Haiku synthesis pass. Free, unlimited.
