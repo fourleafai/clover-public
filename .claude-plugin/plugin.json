@@ -1,0 +1,11 @@
+{
+  "name": "four-leaf",
+  "description": "Job search and interview prep coach. Pulls real postings, role intelligence, and resume scoring from the hosted Four-Leaf MCP.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Four-Leaf"
+  },
+  "homepage": "https://four-leaf.ai",
+  "repository": "https://github.com/fourleafai/clover-public",
+  "license": "MIT"
+}

@@ -23,10 +23,13 @@ const fs = require("fs/promises");
 const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
-const SKILL_PATH = path.join(ROOT, "SKILL.md");
-const REFERENCES_DIR = path.join(ROOT, "references");
-const DIST_DIR = path.join(ROOT, "dist");
 const SKILL_NAME = "four-leaf-coach";
+// Canonical skill location follows the Claude Code plugin layout:
+// `<plugin-root>/skills/<name>/SKILL.md` + adjacent references/.
+const SKILL_DIR = path.join(ROOT, "skills", SKILL_NAME);
+const SKILL_PATH = path.join(SKILL_DIR, "SKILL.md");
+const REFERENCES_DIR = path.join(SKILL_DIR, "references");
+const DIST_DIR = path.join(ROOT, "dist");
 
 // Top-level reference docs, in the order they should appear when flattened.
 const TOP_LEVEL_ORDER = ["mcp-tools.md", "upgrade-flow.md"];
@@ -187,7 +190,7 @@ async function buildFlattened(body, ordered) {
 
 async function main() {
   if (!(await pathExists(SKILL_PATH))) {
-    fail("SKILL.md not found at repo root.");
+    fail(`SKILL.md not found at ${path.relative(ROOT, SKILL_PATH)}.`);
   }
   const skillRaw = await fs.readFile(SKILL_PATH, "utf8");
   const { body } = parseSkill(skillRaw);

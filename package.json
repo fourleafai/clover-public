@@ -11,8 +11,9 @@
     "bin",
     "dist",
     "scripts",
-    "SKILL.md",
-    "references",
+    "skills",
+    ".claude-plugin",
+    ".mcp.json",
     "README.md",
     "LICENSE"
   ],
