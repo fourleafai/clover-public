@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.fourleafai/clover-public",
-  "description": "Job search assistant MCP server. 11 tools spanning job discovery, role intelligence, practice question generation, resume scoring, comp benchmarks, and negotiation strategy. OAuth 2.1 + PKCE + Dynamic Client Registration, cross-LLM via the hosted endpoint.",
+  "description": "Job search and interview prep MCP. 11 tools, OAuth 2.1, cross-LLM. four-leaf.ai.",
   "repository": {
     "url": "https://github.com/fourleafai/clover-public",
     "source": "github"
