@@ -1,6 +1,6 @@
 {
   "name": "four-leaf-coach",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "One-command installer for the four-leaf-coach Skill: a job search and interview prep coach for Claude Code, Cursor, Codex, and GitHub Copilot, backed by the hosted Four-Leaf MCP.",
   "license": "MIT",
   "private": false,
