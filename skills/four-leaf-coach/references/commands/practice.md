@@ -1,15 +1,15 @@
-# /practice
+# practice
 
 Generate calibrated practice questions and coach the user's answers.
 
 ## When to run
 
-- User types `/practice <role>` (optionally with type and difficulty).
 - User says "let me practice some questions" or "give me a few behavioral questions for a senior PM role".
+- User wants to drill questions, not just read about formats.
 
 ## Flow
 
-1. **Get the role.** Validate against `list_roles` if needed. If the user came from `/prep-role`, you already know it.
+1. **Get the role.** Validate against `list_roles` if needed. If the user came from prep-role, you already know it.
 
 2. **Get the question type.** Options vary by role. Default options:
    - `behavioral` for STAR-format stories, leadership, communication

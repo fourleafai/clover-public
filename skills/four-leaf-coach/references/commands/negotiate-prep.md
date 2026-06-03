@@ -1,4 +1,4 @@
-# /negotiate-prep
+# negotiate-prep
 
 Coach the user through compensation, end to end. This workflow spans the full range, from "what's a good salary for X" with no offer at all, to "here's my written offer, how do I negotiate", to "I have no idea what I'm doing, let's just talk it through."
 

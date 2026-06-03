@@ -4,9 +4,8 @@ Default entry. Figure out what the user is prepping for, confirm Four-Leaf has d
 
 ## When to run
 
-- User types `/kickoff`.
 - User opens a fresh conversation and says something generic like "help me with my job search" or "I have an interview coming up".
-- User's intent doesn't map cleanly to one of the other six commands.
+- User's intent doesn't map cleanly to one of the other six workflows.
 
 ## Flow
 
@@ -25,17 +24,17 @@ Default entry. Figure out what the user is prepping for, confirm Four-Leaf has d
 
 | User wants | Route to |
 |---|---|
-| Find jobs / discover roles | `/find-jobs` |
-| Understand a specific role's interview format | `/prep-role` |
-| Practice answering questions | `/practice` |
-| Check resume fit against a JD | `/analyze-jd` |
-| Comp negotiation | `/negotiate-prep` |
-| Generic "what are interviews like at X" | `/interview-strategy` |
+| Find jobs / discover roles | find-jobs |
+| Understand a specific role's interview format | prep-role |
+| Practice answering questions | practice |
+| Check resume fit against a JD | analyze-jd |
+| Comp negotiation | negotiate-prep |
+| Generic "what are interviews like at X" | interview-strategy |
 
-Suggest the command in plain language, not by saying "I'll run `/find-jobs` now". Just transition into doing it.
+Transition into the workflow in plain language. Don't announce it to the user by name. Just start doing the work.
 
 ## What not to do
 
 - Don't make the user fill out a form. Conversational.
-- Don't ask for their full resume in `/kickoff`. Save that for `/analyze-jd`.
+- Don't ask for their full resume in the kickoff workflow. Save that for analyze-jd.
 - Don't try to be helpful on every topic at once. Pick the one that matters and dig in.

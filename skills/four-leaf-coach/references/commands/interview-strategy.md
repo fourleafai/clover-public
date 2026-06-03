@@ -1,11 +1,11 @@
-# /interview-strategy
+# interview-strategy
 
 Conversational guide on how interviews work, formats the user might encounter, and how to read signal vs noise.
 
 ## When to run
 
-- User types `/interview-strategy <topic>`.
 - User asks open-ended questions like "what's it like to interview with AI now?" or "how do work trials work?" or "what's an MBB case interview actually testing?".
+- User wants format/strategy context that isn't tied to a specific role.
 
 ## Common topics
 

@@ -1,11 +1,11 @@
-# /analyze-jd
+# analyze-jd
 
 Score a resume against a job description and point out the gaps.
 
 ## When to run
 
-- User types `/analyze-jd`.
 - User says "should I apply for this?" or "how does my resume look against this JD?".
+- User pastes a job description and asks for a fit assessment.
 
 ## Flow
 
