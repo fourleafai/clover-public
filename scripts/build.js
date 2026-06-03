@@ -2,9 +2,10 @@
 /**
  * Build per-tool bundles of the four-leaf-coach Skill.
  *
- * Source of truth is the root SKILL.md plus the references/ tree. This script
- * reads that source and writes dist/<tool>/ directories, each laid out exactly
- * the way that tool's auto-load convention expects:
+ * Source of truth is skills/four-leaf-coach/SKILL.md plus its adjacent
+ * references/ tree. This script reads that source and writes dist/<tool>/
+ * directories, each laid out exactly the way that tool's auto-load
+ * convention expects:
  *
  *   claude-code  .claude/skills/four-leaf-coach/SKILL.md + references/   (file tree)
  *   cursor       .cursor/skills/four-leaf-coach/SKILL.md + references/    (file tree)
@@ -23,10 +24,13 @@ const fs = require("fs/promises");
 const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
-const SKILL_PATH = path.join(ROOT, "SKILL.md");
-const REFERENCES_DIR = path.join(ROOT, "references");
-const DIST_DIR = path.join(ROOT, "dist");
 const SKILL_NAME = "four-leaf-coach";
+// Canonical skill location follows the Claude Code plugin layout:
+// `<plugin-root>/skills/<name>/SKILL.md` + adjacent references/.
+const SKILL_DIR = path.join(ROOT, "skills", SKILL_NAME);
+const SKILL_PATH = path.join(SKILL_DIR, "SKILL.md");
+const REFERENCES_DIR = path.join(SKILL_DIR, "references");
+const DIST_DIR = path.join(ROOT, "dist");
 
 // Top-level reference docs, in the order they should appear when flattened.
 const TOP_LEVEL_ORDER = ["mcp-tools.md", "upgrade-flow.md"];
@@ -187,7 +191,7 @@ async function buildFlattened(body, ordered) {
 
 async function main() {
   if (!(await pathExists(SKILL_PATH))) {
-    fail("SKILL.md not found at repo root.");
+    fail(`SKILL.md not found at ${path.relative(ROOT, SKILL_PATH)}.`);
   }
   const skillRaw = await fs.readFile(SKILL_PATH, "utf8");
   const { body } = parseSkill(skillRaw);

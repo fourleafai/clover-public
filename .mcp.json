@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "four-leaf": {
+      "url": "https://four-leaf.ai/api/mcp"
+    }
+  }
+}

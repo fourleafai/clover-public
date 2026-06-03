@@ -1,15 +1,15 @@
-# /find-jobs
+# find-jobs
 
-Natural-language search across 100k+ active job postings.
+Natural-language search across 180k+ active job postings.
 
 ## When to run
 
-- User types `/find-jobs` (with or without a query).
 - User says something like "find me senior frontend roles, remote, $180k+" or "what's hiring for data engineers in Austin?".
+- User wants to browse the live market rather than analyze a specific posting.
 
 ## Flow
 
-1. **Get the query.** If the user typed the command without a query, ask one short question:
+1. **Get the query.** If the user hasn't given enough to search on, ask one short question:
    > What are you searching for? Try a role plus filters like remote, location, salary, or company size.
 
 2. **Call `search_jobs`** with the user's query as-is. The tool handles parsing the natural language; don't pre-process it.
@@ -32,7 +32,7 @@ Natural-language search across 100k+ active job postings.
 
 - **Zero results.** Don't apologize. Ask for one specific adjustment ("try a different location or drop the salary floor?").
 - **Rate-limited.** Free tier is 30 searches/day. Tell the user when it resets and that paid plans are unlimited.
-- **The user names a specific company.** `search_jobs` handles company filters in the natural language. If they want deeper company-specific intel beyond what's in the postings, route to `/prep-role` or `/interview-strategy` and pass the company name.
+- **The user names a specific company.** `search_jobs` handles company filters in the natural language. If they want deeper company-specific intel beyond what's in the postings, route to prep-role or interview-strategy and pass the company name.
 
 ## Don't
 

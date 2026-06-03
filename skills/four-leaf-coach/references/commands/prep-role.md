@@ -1,11 +1,11 @@
-# /prep-role
+# prep-role
 
 Deep prep for a specific role's interview process. The user wants to know what to expect, how to win, and what kills candidates at their level.
 
 ## When to run
 
-- User types `/prep-role <role>` (optionally with company and seniority).
 - User says things like "what's a senior data scientist interview at Anthropic like?" or "I'm prepping for a staff engineering loop".
+- User names a specific role and wants pipeline + scoring detail rather than open-ended strategy.
 
 ## Flow
 
