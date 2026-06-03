@@ -2,9 +2,10 @@
 /**
  * Build per-tool bundles of the four-leaf-coach Skill.
  *
- * Source of truth is the root SKILL.md plus the references/ tree. This script
- * reads that source and writes dist/<tool>/ directories, each laid out exactly
- * the way that tool's auto-load convention expects:
+ * Source of truth is skills/four-leaf-coach/SKILL.md plus its adjacent
+ * references/ tree. This script reads that source and writes dist/<tool>/
+ * directories, each laid out exactly the way that tool's auto-load
+ * convention expects:
  *
  *   claude-code  .claude/skills/four-leaf-coach/SKILL.md + references/   (file tree)
  *   cursor       .cursor/skills/four-leaf-coach/SKILL.md + references/    (file tree)
