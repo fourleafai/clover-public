@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 title: "four-leaf-coach"
-abstract: "Open-source Claude / Cursor / OpenAI Codex / GitHub Copilot Skill plus hosted MCP integration for job search and interview prep. Live job postings, role-specific interview intelligence, the curated question bank, resume scoring, with paid-tier deep-links into voice mock interviews and AI resume tailoring on four-leaf.ai."
+abstract: "Open-source Claude / Cursor / OpenAI Codex / GitHub Copilot Skill plus hosted MCP integration for job search and interview prep. Live job postings, role-specific interview intelligence, the curated question bank, rubric-scored feedback on typed practice answers, resume scoring, and an application tracker, with paid-tier deep-links into voice mock interviews and AI resume tailoring on four-leaf.ai."
 type: software
 authors:
   - name: "Four-Leaf"

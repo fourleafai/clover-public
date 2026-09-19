@@ -1,7 +1,7 @@
 {
   "name": "four-leaf",
-  "description": "Job search and interview prep coach. Pulls real postings, role intelligence, and resume scoring from the hosted Four-Leaf MCP.",
-  "version": "1.0.0",
+  "description": "Job search and interview prep coach. Pulls real postings, role intelligence, rubric-scored answer feedback, resume scoring, and your application tracker from the hosted Four-Leaf MCP.",
+  "version": "1.1.0",
   "author": {
     "name": "Four-Leaf"
   },
