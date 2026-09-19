@@ -1,19 +1,19 @@
 # four-leaf-coach
 
-An open-source Skill that turns Claude (or ChatGPT, Cursor, Codex, GitHub Copilot) into a job search and interview prep coach. It pulls real job postings, role-specific interview intelligence, and resume scoring from the hosted Four-Leaf MCP, then walks the user through preparing for an actual interview.
+An open-source Skill that turns Claude (or ChatGPT, Cursor, Codex, GitHub Copilot) into a job search and interview prep coach. It pulls real job postings, role-specific interview intelligence, rubric-scored feedback on practice answers, and resume scoring from the hosted Four-Leaf MCP, then walks the user through preparing for an actual interview.
 
-Free to install and use. Voice mock interviews with rubric-scored feedback and full AI resume tailoring live on [four-leaf.ai](https://four-leaf.ai); the Skill surfaces those as an upgrade path when they're the right next step.
+Free to install and use, including scoring the answers you type. Voice mock interviews (spoken answers, adaptive follow-ups) and full AI resume tailoring live on [four-leaf.ai](https://four-leaf.ai); the Skill surfaces those as an upgrade path when they're the right next step.
 
 ## What it does
 
-Walks a user through prep for a specific role at a specific company. The Skill greets, asks what they're prepping for, and routes them into one of seven guided workflows. Every workflow pulls live data from the Four-Leaf MCP (jobs, role intel, question bank, match scoring) and adds the Skill's coaching on top.
+Walks a user through prep for a specific role at a specific company. The Skill greets, asks what they're prepping for, and routes them into one of seven guided workflows. Every workflow pulls live data from the Four-Leaf MCP's fifteen tools (jobs and full postings, role intel, question bank, answer scoring, match scoring, comp research, application tracker) and adds the Skill's coaching on top.
 
 You don't type these as commands. Say what you want in plain language and the coach routes to the right workflow:
 
-- **Kickoff** the coach figures out what you're prepping for and routes you. Say "help me get ready for my job search".
-- **Find jobs** natural-language search across 100k+ active postings. Say "find me remote senior data scientist roles".
+- **Kickoff** the coach reads your application tracker, figures out what you're prepping for, and routes you. Say "help me get ready for my job search" or "where am I with everything".
+- **Find jobs** natural-language search across 140,000+ active postings, then pull up a full posting and save it to your tracker. Say "find me remote senior data scientist roles".
 - **Prep for a role** interview pipeline, what to expect, how to win. Say "what's the interview like for a PM at Stripe".
-- **Practice** calibrated questions with coaching on your answers. Say "give me a few hard system design questions".
+- **Practice** calibrated questions, then type your answer and get it scored 1-10 against the same five-dimension rubric the Four-Leaf practice page uses. Say "give me a few hard system design questions".
 - **Analyze a JD** scores a resume against a posting and points out gaps. Say "how does my resume stack up against this JD".
 - **Negotiate and comp research** real numbers from the MCP. Have an offer? It runs a full analysis (total comp, market percentile, red flags, a counter strategy with exact talking points). Just asking what a role pays? It returns a cited salary band from a live web search. Say "they made an offer, help me negotiate", "is this offer any good", or "what's a good salary for a backend engineer in Austin".
 - **Interview strategy** formats, AI interviewers, work trials, signal vs noise. Say "what are AI interviews actually like".
@@ -40,7 +40,7 @@ Cursor needs the Nightly channel with **Settings, Rules, Agent Skills** enabled.
 
 ### Step 2: install the Four-Leaf MCP for live data
 
-The Skill works in degraded mode (coaching only, no live job data) without the MCP. To get real job search, role intel, and resume scoring, install the hosted MCP:
+The Skill works in degraded mode (coaching only, no live job data) without the MCP. To get real job search, role intel, answer scoring, and resume scoring, install the hosted MCP:
 
 ```bash
 # Claude Code, Claude Desktop, and any tool that uses claude-mcp config
@@ -79,27 +79,27 @@ The GitHub Copilot bundle is a single flattened file (`.github/copilot-instructi
 
 ## What's free vs paid
 
-- **Free**: the Skill itself, all the data tools in the MCP (jobs, role intel, question bank, match scoring). Daily rate limits on a few of the compute-heavier tools.
-- **Paid on [four-leaf.ai](https://four-leaf.ai)**: voice mock interviews with adaptive AI follow-ups and rubric-scored feedback per answer, full AI resume tailoring against a specific JD, application tracking. Three options at [four-leaf.ai/pricing](https://four-leaf.ai/pricing). 3-day free trial (no card), $5 5-Day Pass, $20/mo Pro. All three give you the same features.
+- **Free**: the Skill itself, and thirteen of the fifteen MCP tools. That's jobs and full postings, role intel, the question bank, answer scoring, match scoring, comp research, and reading and writing your application tracker. Six of them carry a daily cap on a free account (job search 30/day; question generation, answer scoring, match scoring, and the two comp tools 20/day each, on separate counters). The rest are unmetered.
+- **Paid on [four-leaf.ai](https://four-leaf.ai)**: two tools. Voice mock interviews with spoken answers and adaptive AI follow-ups, and full AI resume tailoring against a specific JD. A paid plan also lifts the daily caps above. Three options at [four-leaf.ai/pricing](https://four-leaf.ai/pricing). 3-day free trial (no card), $5 5-Day Pass, $20/mo Pro. All three give you the same features.
 
 The Skill surfaces these when they're the right next step. It doesn't push.
 
 ## FAQ
 
 **What is four-leaf-coach?**
-An open-source Skill that turns Claude, Cursor, OpenAI Codex, or GitHub Copilot into a job-search and interview-prep coach. The Skill is a structured set of instructions plus reference files that your AI tool loads. It works with the hosted Four-Leaf MCP server for live data (real job postings, role-specific interview intelligence, resume scoring).
+An open-source Skill that turns Claude, Cursor, OpenAI Codex, or GitHub Copilot into a job-search and interview-prep coach. The Skill is a structured set of instructions plus reference files that your AI tool loads. It works with the hosted Four-Leaf MCP server for live data (real job postings, role-specific interview intelligence, answer scoring, resume scoring, your application tracker).
 
 **How is this different from just prompting Claude for interview prep?**
-Generic prompts produce generic advice. four-leaf-coach calls real tools: `search_jobs` returns actual apply URLs from 100k+ active postings; `match_score` runs a real scoring algorithm against your resume; `generate_practice_questions` produces role-calibrated questions; `get_interview_questions` pulls from a curated question bank. The Skill orchestrates the calls and coaches around them.
+Generic prompts produce generic advice. four-leaf-coach calls real tools: `search_jobs` returns actual apply URLs from 140,000+ active postings and `get_job` expands one to the full text; `match_score` runs a real scoring algorithm against your resume; `generate_practice_questions` produces role-calibrated questions and `score_answer` grades what you type against a five-dimension rubric; `save_application` puts a role in your tracker. The Skill orchestrates the calls and coaches around them.
 
 **Do I need a Four-Leaf account?**
-For the data tools (jobs, role intel, question bank, match scoring) a free Four-Leaf account works. The 3-day trial requires no credit card. Voice mock interviews with rubric-scored feedback per answer and full AI resume tailoring are paid features on four-leaf.ai. The Skill surfaces those as an upgrade path when relevant.
+For the data tools (jobs, role intel, question bank, answer scoring, match scoring, comp research, application tracker) a free Four-Leaf account works. The 3-day trial requires no credit card. Voice mock interviews and full AI resume tailoring are paid features on four-leaf.ai. The Skill surfaces those as an upgrade path when relevant.
 
 **Does the MCP work with ChatGPT?**
 Yes. The MCP is HTTP-based with OAuth, so any MCP-aware client connects: Claude Desktop, Claude Code, Cursor, ChatGPT Desktop (Plus + Dev mode), Cline, Continue, Windsurf. The Skill itself is a Claude / Cursor / Codex / Copilot primitive; ChatGPT doesn't yet have a comparable file-based Skill convention, but the underlying MCP tools work there.
 
 **Can I use the Skill without the MCP?**
-Yes, in degraded mode. Without the MCP, the Skill still coaches with structured workflows for prep, practice, JD analysis, and negotiation, just without live job listings or real resume scoring. Install the MCP to unlock the live data path.
+Yes, in degraded mode. Without the MCP, the Skill still coaches with structured workflows for prep, practice, JD analysis, and negotiation, just without live job listings, rubric-scored answers, or real resume scoring. Install the MCP to unlock the live data path.
 
 **Is the question bank really open?**
 The Skill, the per-tool dist pipeline, and the install CLI are MIT-licensed in this repo. The question bank itself lives behind the MCP today; the open-data play is on the roadmap.

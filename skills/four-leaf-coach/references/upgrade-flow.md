@@ -24,11 +24,19 @@ User asks for live voice practice. The MCP returns `upgrade_required`. Respond l
 
 That's it. No follow-up nudge.
 
-## Example: tailor resume (when tool not yet live)
+## Example: tailor resume
 
-User asks for resume tailoring. If `tailor_resume` isn't yet available in the MCP, don't fake it:
+`tailor_resume` is live. Call it with the role and the job description; on a free account it returns `upgrade_required` with the pricing URL, and the description you passed is not stashed. Respond like:
 
-> Full AI resume tailoring against this JD is on Four-Leaf at https://four-leaf.ai/resume?ref=mcp_match_score. Paste the posting there and it sets up the tailored application instantly. I can also keep coaching the rewrite here. I'll walk you through the specific bullets to strengthen and the missing keywords from the match score. Which do you want?
+> A full AI rewrite against this posting, bullet by bullet with ATS keyword matching, is the paid tailoring on Four-Leaf. Three options at https://four-leaf.ai/pricing?ref=mcp_tailor. There's a free 3-day trial (no card), a $5 5-Day Pass, or $20/mo Pro.
+>
+> Or I can coach the rewrite here for free. The match score already told us which keywords are missing; I'll walk you through the specific bullets to strengthen. Which do you want?
+
+On a paid account it returns a deep link instead, with the posting attached for 15 minutes. Hand over the link and say the description is already loaded, so the user doesn't paste it again.
+
+## Example: the tracker is not paid
+
+Worth knowing so you don't gate the wrong thing. `list_applications` and `save_application` are free and unmetered. If a user asks to save a job or check where they are, just do it. Don't mention pricing.
 
 ## Anti-patterns to avoid
 
