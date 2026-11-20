@@ -1,12 +1,23 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.fourleafai/clover-public",
+  "title": "Four-Leaf",
   "description": "Job search and interview prep MCP. 15 tools, OAuth 2.1, cross-LLM. four-leaf.ai.",
+  "websiteUrl": "https://four-leaf.ai/oss",
+  "icons": [
+    {
+      "src": "https://four-leaf.ai/logo-mark.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    }
+  ],
   "repository": {
     "url": "https://github.com/fourleafai/clover-public",
     "source": "github"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "remotes": [
     {
       "type": "streamable-http",
